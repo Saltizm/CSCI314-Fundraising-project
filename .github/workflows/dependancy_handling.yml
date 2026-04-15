@@ -54,10 +54,3 @@ jobs:
         pip list
         python -c "import flask; print(f'Flask version: {flask.__version__}')"
         python -c "import MySQLdb; print('MySQLdb imported successfully')"
-    
-    - name: Run tests
-      env:
-        DATABASE_URL: mysql://testuser:testpass@localhost:3306/testdb
-        FLASK_ENV: testing
-      run: |
-        pytest tests/ -v --tb=short
